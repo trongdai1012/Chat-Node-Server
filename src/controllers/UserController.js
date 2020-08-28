@@ -1,6 +1,6 @@
 import { MidUser } from '../models/middle';
 
-class PersonController {
+class UserController {
     async Register(req, res) {
         const userRegister = req.body;
         return await MidUser.Register(userRegister);
@@ -17,6 +17,16 @@ class PersonController {
 
         return userData;
     }
+
+    async getUserToChat(req, res) {
+        let { userData } = req;
+
+        if(!userData){
+            throw new Error('Vui lòng đăng nhập');
+        }
+
+        return MidUser.getUserToChat();
+    }
 }
 
-export default new PersonController();
+export default new UserController();

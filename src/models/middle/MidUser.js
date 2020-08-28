@@ -99,6 +99,14 @@ class MidUser {
             }
         })
     }
+
+    async getUserToChat(){
+        return User.findAll({
+            where: {
+                del: 0
+            }
+        })
+    }
 }
 
 export default new MidUser;

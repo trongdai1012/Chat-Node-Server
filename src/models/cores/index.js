@@ -5,9 +5,9 @@ export { default as UserRoom } from './UserRoom';
 
 import { sequelize } from '../../connections';
 
-for(let m in sequelize.models){
-    sequelize.models[m].sync();
-}
+// for(let m in sequelize.models){
+//     sequelize.models[m].sync();
+// }
 
 for(let m in sequelize.models){
     sequelize.models[m].association();

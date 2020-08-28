@@ -1,9 +1,11 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../../connections';
 import BaseModel from './BaseModel';
+import { User } from '.';
 
 export default class Message extends BaseModel {
     static association() {
+        Message.belongsTo(User, { as: 'userInfo', foreignKey: 'userId' })
     }
 }
 
@@ -14,7 +16,11 @@ const attributes = {
         primaryKey: true,
         autoIncrement: true
     },
-    userRoomId: {
+    roomId: {
+        type: DataTypes.INTEGER(10),
+        allowNULL: false
+    },
+    userId: {
         type: DataTypes.INTEGER(10),
         allowNULL: false
     },

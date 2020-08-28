@@ -40,6 +40,10 @@ const attributes = {
         type: DataTypes.STRING,
         allowNULL: true
     },
+    avatar: {
+        type: DataTypes.STRING,
+        allowNULL: true
+    },
     status: {
         type: DataTypes.TINYINT(1),
         allowNULL: true

@@ -1,9 +1,11 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../../connections';
 import BaseModel from './BaseModel';
+import { User } from '.';
 
 export default class UserRoom extends BaseModel {
     static association() {
+        UserRoom.belongsTo(User, { as: 'userInfo', foreignKey: 'userId' })
     }
 }
 

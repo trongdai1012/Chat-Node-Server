@@ -8,5 +8,6 @@ let routerApp = new Router();
 routerApp.post('/register', Response(UserController.Register));
 routerApp.post('/authentication', Response(UserController.Authentication));
 routerApp.get('/userInfo', isAuth, Response(UserController.getUserInfo));
+routerApp.get('/getUserToChat', isAuth, Response(UserController.getUserToChat));
 
 export default routerApp;
